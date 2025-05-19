@@ -1,0 +1,5 @@
+Parsing completed successfully.
+DeclarationAssignment
+  int
+  a
+  100
