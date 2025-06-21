@@ -1,3 +1,4 @@
+#include<stdio.h>
 #ifndef AST_H
 #define AST_H
 
@@ -14,5 +15,8 @@ typedef struct ASTNode {
 ASTNode* createNode(const char *label);
 void addChild(ASTNode *parent, ASTNode *child);
 void printAST(ASTNode *node, int level);
+void printASTToFile(struct ASTNode *node, int level, FILE *file);
+void printASTToJSON(struct ASTNode *node, FILE *file); // <--- Add this declaration
+
 
 #endif // AST_H

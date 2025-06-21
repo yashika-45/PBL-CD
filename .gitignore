@@ -1,0 +1,5 @@
+# Ignore Flex temporary files
+backend/phase2/~*
+
+# Optional: Ignore all temp files
+*~

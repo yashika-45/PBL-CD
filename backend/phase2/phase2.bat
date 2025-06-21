@@ -16,7 +16,7 @@ REM Create output folder if needed
 if not exist ..\output mkdir ..\output
 
 REM Run analyzer on input
-phase2.exe temp\input.c > ..\output\result.txt
+phase2.exe ..\temp\input.c > ..\output\result.txt
 
 REM Show the output
 type ..\output\result.txt

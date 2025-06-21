@@ -1,0 +1,65 @@
+/* Import Tailwind base styles */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global styles */
+body {
+  @apply bg-gradient-to-br from-white to-blue-50 text-gray-800 font-sans antialiased;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* Smooth transitions */
+* {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #93c5fd; /* blue-300 */
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+/* Heading Styles */
+h1, h2, h3, h4, h5 {
+  @apply font-semibold text-blue-800;
+}
+
+/* Button Base Styling (optional if using Tailwind in JSX directly) */
+.btn {
+  @apply px-4 py-2 rounded shadow font-medium focus:outline-none;
+}
+
+.btn-primary {
+  @apply bg-blue-600 text-white hover:bg-blue-700;
+}
+
+.btn-secondary {
+  @apply bg-gray-300 text-gray-800 hover:bg-gray-400;
+}
+
+/* Code block styling */
+code, pre {
+  @apply font-mono bg-gray-100 p-2 rounded text-sm;
+}
+
+/* Custom animations (optional use in Framer Motion or Tailwind) */
+.fade-in {
+  animation: fadeIn 0.4s ease-in both;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}

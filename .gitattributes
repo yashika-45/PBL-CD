@@ -1,0 +1,14 @@
+# Set default behavior to automatically normalize line endings
+* text=auto
+
+# Force shell scripts to always use LF (Unix style)
+*.sh text eol=lf
+
+# Force JSON files to use LF as well
+*.json text eol=lf
+
+# Optional: For C/C++ source files, use native line endings (CRLF on Windows)
+*.c text
+*.h text
+*.cpp text
+*.hpp text

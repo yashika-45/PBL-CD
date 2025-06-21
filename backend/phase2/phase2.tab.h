@@ -43,6 +43,12 @@
 #if YYDEBUG
 extern int yydebug;
 #endif
+/* "%code requires" blocks.  */
+#line 1 "phase2.y"
+
+    #include "ast.h"
+
+#line 52 "phase2.tab.h"
 
 /* Token type.  */
 #ifndef YYTOKENTYPE
@@ -110,12 +116,12 @@ extern int yydebug;
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 union YYSTYPE
 {
-#line 12 "phase2.y"
+#line 16 "phase2.y"
 
     char *str;
-    struct ASTNode *node;
+    ASTNode *node;
 
-#line 119 "phase2.tab.h"
+#line 125 "phase2.tab.h"
 
 };
 typedef union YYSTYPE YYSTYPE;

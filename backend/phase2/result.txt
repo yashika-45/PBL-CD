@@ -1,5 +1,27 @@
 Parsing completed successfully.
-DeclarationAssignment
-  int
-  a
-  100
+Program
+  FunctionDefinition
+    Type
+      (null)
+    main
+    EmptyParameterList
+    CompoundStatement
+      StatementList
+        VariableDeclaration
+          Type
+            main
+          a
+        VariableDeclaration
+          Type
+            a
+          b
+        ExpressionStatement
+          Assignment
+            a
+            Number
+              10
+        ExpressionStatement
+          Assignment
+            b
+            Number
+              20
