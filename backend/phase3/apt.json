@@ -1,0 +1,139 @@
+{
+  "label": "Program",
+  "children": [
+    {
+      "label": "FunctionDefinition",
+      "children": [
+        {
+          "label": "Type",
+          "children": [
+            {
+              "label": "int"
+            }
+          ]
+        },
+        {
+          "label": "main"
+        },
+        {
+          "label": "EmptyParameterList"
+        },
+        {
+          "label": "CompoundStatement",
+          "children": [
+            {
+              "label": "StatementList",
+              "children": [
+                {
+                  "label": "VariableDeclarationWithInit",
+                  "type": "int",
+                  "children": [
+                    {
+                      "label": "Type",
+                      "children": [
+                        {
+                          "label": "int"
+                        }
+                      ]
+                    },
+                    {
+                      "label": "a"
+                    },
+                    {
+                      "label": "Number",
+                      "children": [
+                        {
+                          "label": "10"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "label": "VariableDeclarationWithInit",
+                  "type": "int",
+                  "children": [
+                    {
+                      "label": "Type",
+                      "children": [
+                        {
+                          "label": "int"
+                        }
+                      ]
+                    },
+                    {
+                      "label": "b"
+                    },
+                    {
+                      "label": "Number",
+                      "children": [
+                        {
+                          "label": "20"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "label": "VariableDeclaration",
+                  "type": "int",
+                  "children": [
+                    {
+                      "label": "Type",
+                      "children": [
+                        {
+                          "label": "int"
+                        }
+                      ]
+                    },
+                    {
+                      "label": "a"
+                    }
+                  ]
+                },
+                {
+                  "label": "VariableDeclarationWithInit",
+                  "type": "int",
+                  "children": [
+                    {
+                      "label": "Type",
+                      "children": [
+                        {
+                          "label": "int"
+                        }
+                      ]
+                    },
+                    {
+                      "label": "sum"
+                    },
+                    {
+                      "label": "Addition",
+                      "children": [
+                        {
+                          "label": "Identifier",
+                          "children": [
+                            {
+                              "label": "a"
+                            }
+                          ]
+                        },
+                        {
+                          "label": "Identifier",
+                          "children": [
+                            {
+                              "label": "b"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+Program
+  FunctionDefinition
+    Type
+      int
+    main
+    EmptyParameterList
+    CompoundStatement
+      StatementList
+        VariableDeclarationWithInit [type: int]
+          Type
+            int
+          a
+          Number
+            10
+        VariableDeclarationWithInit [type: int]
+          Type
+            int
+          b
+          Number
+            20
+        VariableDeclaration [type: int]
+          Type
+            int
+          a
+        VariableDeclarationWithInit [type: int]
+          Type
+            int
+          sum
+          Addition
+            Identifier
+              a
+            Identifier
+              b
