@@ -8,7 +8,8 @@
 typedef struct ASTNode {
     char *label;                        // Label or token for the node
     struct ASTNode *children[MAX_CHILDREN]; // Array of child pointers
-    int child_count;                   // Number of children
+    int child_count; 
+    int line;                  // Number of children
 } ASTNode;
 
 // Function declarations

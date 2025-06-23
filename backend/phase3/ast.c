@@ -2,11 +2,12 @@
 #include <stdlib.h>
 #include <string.h>
 #include "ast.h"
-
+extern int yylineno;
 ASTNode* createNode(const char *label) {
     ASTNode *node = (ASTNode *)malloc(sizeof(ASTNode));
     node->label = strdup(label);
     node->child_count = 0;
+    node->line = yylineno;
     return node;
 }
 

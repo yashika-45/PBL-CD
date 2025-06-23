@@ -1,0 +1,4 @@
+===== Symbol Table (Scope Level 0) =====
+Name: main       | Type: int        | Kind: Function  | Line: 10
+===== Symbol Table (Scope Level 1) =====
+Name: i          | Type: int        | Kind: Variable  | Line: 3

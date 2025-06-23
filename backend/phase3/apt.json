@@ -5,27 +5,13 @@
       "label": "FunctionDefinition",
       "children": [
         {
-          "label": "Type",
-          "children": [
-            {
-              "label": "int"
-            }
-          ]
-        },
-        {
-          "label": "main"
-        },
-        {
-          "label": "EmptyParameterList"
-        },
-        {
           "label": "CompoundStatement",
           "children": [
             {
               "label": "StatementList",
               "children": [
                 {
-                  "label": "VariableDeclarationWithInit",
+                  "label": "VariableDeclaration",
                   "type": "int",
                   "children": [
                     {
@@ -37,15 +23,7 @@
                       ]
                     },
                     {
-                      "label": "a"
-                    },
-                    {
-                      "label": "Number",
-                      "children": [
-                        {
-                          "label": "10"
-                        }
-                      ]
+                      "label": "i"
                     }
                   ]
                 },
@@ -62,96 +40,139 @@
                       ]
                     },
                     {
-                      "label": "a"
+                      "label": "i"
                     }
                   ]
                 },
                 {
-                  "label": "VariableDeclarationWithInit",
-                  "type": "int",
+                  "label": "ForLoop",
                   "children": [
                     {
-                      "label": "Type",
+                      "label": "ExpressionStatement",
                       "children": [
                         {
-                          "label": "int"
-                        }
-                      ]
-                    },
-                    {
-                      "label": "b"
-                    },
-                    {
-                      "label": "Number",
-                      "children": [
-                        {
-                          "label": "20"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "label": "VariableDeclarationWithInit",
-                  "type": "int",
-                  "children": [
-                    {
-                      "label": "Type",
-                      "children": [
-                        {
-                          "label": "int"
-                        }
-                      ]
-                    },
-                    {
-                      "label": "sum"
-                    },
-                    {
-                      "label": "Addition",
-                      "children": [
-                        {
-                          "label": "Identifier",
+                          "label": "Assignment",
+                          "type": "int",
                           "children": [
                             {
-                              "label": "a"
-                            }
-                          ]
-                        },
-                        {
-                          "label": "Identifier",
-                          "children": [
+                              "label": "i"
+                            },
                             {
-                              "label": "b"
+                              "label": "Number",
+                              "children": [
+                                {
+                                  "label": "0"
+                                }
+                              ]
                             }
                           ]
                         }
                       ]
-                    }
-                  ]
-                },
-                {
-                  "label": "ExpressionStatement",
-                  "children": [
+                    },
                     {
-                      "label": "FunctionCall",
-                      "is_function": true,
-                      "param_count": 1,
+                      "label": "ExpressionStatement",
                       "children": [
                         {
-                          "label": "printf"
-                        },
-                        {
-                          "label": "ArgumentList",
+                          "label": "LessThan",
                           "children": [
                             {
                               "label": "Identifier",
                               "children": [
                                 {
-                                  "label": "sum"
+                                  "label": "i"
+                                }
+                              ]
+                            },
+                            {
+                              "label": "Number",
+                              "children": [
+                                {
+                                  "label": "5"
                                 }
                               ]
                             }
                           ]
+                        }
+                      ]
+                    },
+                    {
+                      "label": "Addition",
+                      "children": [
+                        {
+                          "label": "Assignment",
+                          "type": "int",
+                          "children": [
+                            {
+                              "label": "i"
+                            },
+                            {
+                              "label": "Identifier",
+                              "children": [
+                                {
+                                  "label": "i"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "label": "Number",
+                          "children": [
+                            {
+                              "label": "1"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "label": "CompoundStatement",
+                      "children": [
+                        {
+                          "label": "StatementList",
+                          "children": [
+                            {
+                              "label": "ExpressionStatement",
+                              "children": [
+                                {
+                                  "label": "FunctionCall",
+                                  "is_function": true,
+                                  "param_count": 1,
+                                  "children": [
+                                    {
+                                      "label": "printf"
+                                    },
+                                    {
+                                      "label": "ArgumentList",
+                                      "children": [
+                                        {
+                                          "label": "Identifier",
+                                          "children": [
+                                            {
+                                              "label": "i"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "label": "ReturnStatement",
+                  "children": [
+                    {
+                      "label": "Number",
+                      "children": [
+                        {
+                          "label": "0"
                         }
                       ]
                     }
