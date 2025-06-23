@@ -12,16 +12,16 @@ Program
           a
           Number
             10
+        VariableDeclaration [type: int]
+          Type
+            int
+          a
         VariableDeclarationWithInit [type: int]
           Type
             int
           b
           Number
             20
-        VariableDeclaration [type: int]
-          Type
-            int
-          a
         VariableDeclarationWithInit [type: int]
           Type
             int
@@ -31,3 +31,9 @@ Program
               a
             Identifier
               b
+        ExpressionStatement
+          FunctionCall [function] [param_count: 1]
+            printf
+            ArgumentList
+              Identifier
+                sum

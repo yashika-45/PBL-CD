@@ -50,6 +50,23 @@
                   ]
                 },
                 {
+                  "label": "VariableDeclaration",
+                  "type": "int",
+                  "children": [
+                    {
+                      "label": "Type",
+                      "children": [
+                        {
+                          "label": "int"
+                        }
+                      ]
+                    },
+                    {
+                      "label": "a"
+                    }
+                  ]
+                },
+                {
                   "label": "VariableDeclarationWithInit",
                   "type": "int",
                   "children": [
@@ -71,23 +88,6 @@
                           "label": "20"
                         }
                       ]
-                    }
-                  ]
-                },
-                {
-                  "label": "VariableDeclaration",
-                  "type": "int",
-                  "children": [
-                    {
-                      "label": "Type",
-                      "children": [
-                        {
-                          "label": "int"
-                        }
-                      ]
-                    },
-                    {
-                      "label": "a"
                     }
                   ]
                 },
@@ -122,6 +122,34 @@
                           "children": [
                             {
                               "label": "b"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "label": "ExpressionStatement",
+                  "children": [
+                    {
+                      "label": "FunctionCall",
+                      "is_function": true,
+                      "param_count": 1,
+                      "children": [
+                        {
+                          "label": "printf"
+                        },
+                        {
+                          "label": "ArgumentList",
+                          "children": [
+                            {
+                              "label": "Identifier",
+                              "children": [
+                                {
+                                  "label": "sum"
+                                }
+                              ]
                             }
                           ]
                         }

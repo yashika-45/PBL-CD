@@ -1,1 +1,2 @@
 Semantic Error: Redeclaration of variable 'a'
+Semantic Error: Function 'printf' not declared

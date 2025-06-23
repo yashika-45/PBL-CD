@@ -579,12 +579,12 @@ static const yytype_int8 yytranslate[] =
   /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_int16 yyrline[] =
 {
-       0,    53,    53,    55,    58,    62,    68,    75,    83,    84,
-      88,    96,   107,   115,   126,   131,   140,   141,   153,   168,
-     169,   170,   171,   172,   173,   180,   182,   187,   193,   203,
-     209,   220,   222,   227,   231,   237,   238,   239,   240,   241,
-     242,   243,   244,   245,   246,   247,   251,   252,   253,   254,
-     260,   269,   270
+       0,    53,    53,    55,    58,    62,    68,    74,    82,    83,
+      87,    95,   106,   114,   125,   130,   139,   140,   152,   167,
+     168,   169,   170,   171,   172,   179,   181,   186,   192,   202,
+     208,   219,   221,   226,   230,   236,   237,   238,   239,   240,
+     241,   242,   243,   244,   245,   246,   250,   251,   252,   253,
+     259,   268,   269
 };
 #endif
 
@@ -1503,37 +1503,36 @@ yyreduce:
   case 6:
 #line 69 "phase2.y"
     {
-        (yyval.node) = createNode("VariableDeclarationWithInit");
-        addChild((yyval.node), (yyvsp[-4].node));
-        addChild((yyval.node), createNode((yyvsp[-3].str)));
-        addChild((yyval.node), (yyvsp[-1].node));
+        (yyval.node) = createNode("Assignment");
+         addChild((yyval.node), createNode((yyvsp[-3].str)));  // 'a'
+         addChild((yyval.node), (yyvsp[-1].node));
     }
-#line 1512 "phase2.tab.c"
+#line 1511 "phase2.tab.c"
     break;
 
   case 7:
-#line 76 "phase2.y"
+#line 75 "phase2.y"
     {
         (yyval.node) = createNode("ErrorDeclaration");
         fprintf(stderr, "Syntax error in declaration at line %d\n", yylineno);
     }
-#line 1521 "phase2.tab.c"
+#line 1520 "phase2.tab.c"
     break;
 
   case 8:
-#line 83 "phase2.y"
+#line 82 "phase2.y"
             { (yyval.node) = createNode("Type"); addChild((yyval.node), createNode((yyvsp[0].str))); }
-#line 1527 "phase2.tab.c"
+#line 1526 "phase2.tab.c"
     break;
 
   case 9:
-#line 84 "phase2.y"
+#line 83 "phase2.y"
             { (yyval.node) = createNode("Type"); addChild((yyval.node), createNode((yyvsp[0].str))); }
-#line 1533 "phase2.tab.c"
+#line 1532 "phase2.tab.c"
     break;
 
   case 10:
-#line 89 "phase2.y"
+#line 88 "phase2.y"
     {
         (yyval.node) = createNode("FunctionDefinition");
         addChild((yyval.node), (yyvsp[-5].node));
@@ -1541,11 +1540,11 @@ yyreduce:
         addChild((yyval.node), (yyvsp[-2].node));
         addChild((yyval.node), (yyvsp[0].node));
     }
-#line 1545 "phase2.tab.c"
+#line 1544 "phase2.tab.c"
     break;
 
   case 11:
-#line 97 "phase2.y"
+#line 96 "phase2.y"
     {
         (yyval.node) = createNode("FunctionDefinition");
         addChild((yyval.node), (yyvsp[-4].node));
@@ -1553,11 +1552,11 @@ yyreduce:
         addChild((yyval.node), createNode("EmptyParameterList"));
         addChild((yyval.node), (yyvsp[0].node));
     }
-#line 1557 "phase2.tab.c"
+#line 1556 "phase2.tab.c"
     break;
 
   case 12:
-#line 108 "phase2.y"
+#line 107 "phase2.y"
     {
         (yyval.node) = createNode("ParameterList");
         ASTNode *param = createNode("Parameter");
@@ -1565,11 +1564,11 @@ yyreduce:
         addChild(param, createNode((yyvsp[0].str)));
         addChild((yyval.node), param);
     }
-#line 1569 "phase2.tab.c"
+#line 1568 "phase2.tab.c"
     break;
 
   case 13:
-#line 116 "phase2.y"
+#line 115 "phase2.y"
     {
         (yyval.node) = (yyvsp[-3].node);
         ASTNode *param = createNode("Parameter");
@@ -1577,35 +1576,35 @@ yyreduce:
         addChild(param, createNode((yyvsp[0].str)));
         addChild((yyval.node), param);
     }
-#line 1581 "phase2.tab.c"
+#line 1580 "phase2.tab.c"
     break;
 
   case 14:
-#line 127 "phase2.y"
+#line 126 "phase2.y"
     {
         (yyval.node) = createNode("CompoundStatement");
         addChild((yyval.node), (yyvsp[-1].node));
     }
-#line 1590 "phase2.tab.c"
+#line 1589 "phase2.tab.c"
     break;
 
   case 15:
-#line 132 "phase2.y"
+#line 131 "phase2.y"
     {
         (yyval.node) = createNode("CompoundStatement");
         addChild((yyval.node), createNode("EmptyStatementList"));
     }
-#line 1599 "phase2.tab.c"
+#line 1598 "phase2.tab.c"
     break;
 
   case 16:
-#line 140 "phase2.y"
+#line 139 "phase2.y"
     { (yyval.node) = createNode("StatementList"); }
-#line 1605 "phase2.tab.c"
+#line 1604 "phase2.tab.c"
     break;
 
   case 17:
-#line 142 "phase2.y"
+#line 141 "phase2.y"
     {
         if (strcmp((yyvsp[-1].node)->label, "StatementList") != 0) {
             ASTNode *new_list = createNode("StatementList");
@@ -1617,11 +1616,11 @@ yyreduce:
             addChild((yyval.node), (yyvsp[0].node));
         }
     }
-#line 1621 "phase2.tab.c"
+#line 1620 "phase2.tab.c"
     break;
 
   case 18:
-#line 154 "phase2.y"
+#line 153 "phase2.y"
     {
         if (strcmp((yyvsp[-1].node)->label, "StatementList") != 0) {
             ASTNode *new_list = createNode("StatementList");
@@ -1633,63 +1632,63 @@ yyreduce:
             addChild((yyval.node), (yyvsp[0].node));
         }
     }
-#line 1637 "phase2.tab.c"
+#line 1636 "phase2.tab.c"
     break;
 
   case 24:
-#line 173 "phase2.y"
+#line 172 "phase2.y"
                     {
         (yyval.node) = createNode("ErrorStatement");
         fprintf(stderr, "Syntax error in statement at line %d\n", yylineno);
     }
-#line 1646 "phase2.tab.c"
+#line 1645 "phase2.tab.c"
     break;
 
   case 25:
-#line 181 "phase2.y"
+#line 180 "phase2.y"
     { (yyval.node) = createNode("ExpressionStatement"); addChild((yyval.node), (yyvsp[-1].node)); }
-#line 1652 "phase2.tab.c"
+#line 1651 "phase2.tab.c"
     break;
 
   case 26:
-#line 183 "phase2.y"
+#line 182 "phase2.y"
     { (yyval.node) = createNode("EmptyStatement"); }
-#line 1658 "phase2.tab.c"
+#line 1657 "phase2.tab.c"
     break;
 
   case 27:
-#line 188 "phase2.y"
+#line 187 "phase2.y"
     {
         (yyval.node) = createNode("IfStatement");
         addChild((yyval.node), (yyvsp[-2].node));
         addChild((yyval.node), (yyvsp[0].node));
     }
-#line 1668 "phase2.tab.c"
+#line 1667 "phase2.tab.c"
     break;
 
   case 28:
-#line 194 "phase2.y"
+#line 193 "phase2.y"
     {
         (yyval.node) = createNode("IfElseStatement");
         addChild((yyval.node), (yyvsp[-4].node));
         addChild((yyval.node), (yyvsp[-2].node));
         addChild((yyval.node), (yyvsp[0].node));
     }
-#line 1679 "phase2.tab.c"
+#line 1678 "phase2.tab.c"
     break;
 
   case 29:
-#line 204 "phase2.y"
+#line 203 "phase2.y"
     {
         (yyval.node) = createNode("WhileLoop");
         addChild((yyval.node), (yyvsp[-2].node));
         addChild((yyval.node), (yyvsp[0].node));
     }
-#line 1689 "phase2.tab.c"
+#line 1688 "phase2.tab.c"
     break;
 
   case 30:
-#line 210 "phase2.y"
+#line 209 "phase2.y"
     {
         (yyval.node) = createNode("ForLoop");
         addChild((yyval.node), (yyvsp[-4].node));
@@ -1697,155 +1696,155 @@ yyreduce:
         addChild((yyval.node), (yyvsp[-2].node));
         addChild((yyval.node), (yyvsp[0].node));
     }
-#line 1701 "phase2.tab.c"
+#line 1700 "phase2.tab.c"
     break;
 
   case 31:
-#line 221 "phase2.y"
+#line 220 "phase2.y"
     { (yyval.node) = createNode("ReturnStatement"); addChild((yyval.node), (yyvsp[-1].node)); }
-#line 1707 "phase2.tab.c"
+#line 1706 "phase2.tab.c"
     break;
 
   case 32:
-#line 223 "phase2.y"
+#line 222 "phase2.y"
     { (yyval.node) = createNode("ReturnStatement"); addChild((yyval.node), createNode("VoidReturn")); }
-#line 1713 "phase2.tab.c"
+#line 1712 "phase2.tab.c"
     break;
 
   case 33:
-#line 227 "phase2.y"
+#line 226 "phase2.y"
                           { (yyval.node) = (yyvsp[0].node); }
-#line 1719 "phase2.tab.c"
+#line 1718 "phase2.tab.c"
     break;
 
   case 34:
-#line 232 "phase2.y"
+#line 231 "phase2.y"
     {
         (yyval.node) = createNode("Assignment");
         addChild((yyval.node), createNode((yyvsp[-2].str)));
         addChild((yyval.node), (yyvsp[0].node));
     }
-#line 1729 "phase2.tab.c"
+#line 1728 "phase2.tab.c"
     break;
 
   case 35:
-#line 237 "phase2.y"
+#line 236 "phase2.y"
                        { (yyval.node) = (yyvsp[0].node); }
-#line 1735 "phase2.tab.c"
+#line 1734 "phase2.tab.c"
     break;
 
   case 36:
-#line 238 "phase2.y"
+#line 237 "phase2.y"
                                { (yyval.node) = createNode("Addition"); addChild((yyval.node), (yyvsp[-2].node)); addChild((yyval.node), (yyvsp[0].node)); }
-#line 1741 "phase2.tab.c"
+#line 1740 "phase2.tab.c"
     break;
 
   case 37:
-#line 239 "phase2.y"
+#line 238 "phase2.y"
                                 { (yyval.node) = createNode("Subtraction"); addChild((yyval.node), (yyvsp[-2].node)); addChild((yyval.node), (yyvsp[0].node)); }
-#line 1747 "phase2.tab.c"
+#line 1746 "phase2.tab.c"
     break;
 
   case 38:
-#line 240 "phase2.y"
+#line 239 "phase2.y"
                               { (yyval.node) = createNode("Multiplication"); addChild((yyval.node), (yyvsp[-2].node)); addChild((yyval.node), (yyvsp[0].node)); }
-#line 1753 "phase2.tab.c"
+#line 1752 "phase2.tab.c"
     break;
 
   case 39:
-#line 241 "phase2.y"
+#line 240 "phase2.y"
                               { (yyval.node) = createNode("Division"); addChild((yyval.node), (yyvsp[-2].node)); addChild((yyval.node), (yyvsp[0].node)); }
-#line 1759 "phase2.tab.c"
+#line 1758 "phase2.tab.c"
     break;
 
   case 40:
-#line 242 "phase2.y"
+#line 241 "phase2.y"
                              { (yyval.node) = createNode("Equality"); addChild((yyval.node), (yyvsp[-2].node)); addChild((yyval.node), (yyvsp[0].node)); }
-#line 1765 "phase2.tab.c"
+#line 1764 "phase2.tab.c"
     break;
 
   case 41:
-#line 243 "phase2.y"
+#line 242 "phase2.y"
                               { (yyval.node) = createNode("Inequality"); addChild((yyval.node), (yyvsp[-2].node)); addChild((yyval.node), (yyvsp[0].node)); }
-#line 1771 "phase2.tab.c"
+#line 1770 "phase2.tab.c"
     break;
 
   case 42:
-#line 244 "phase2.y"
+#line 243 "phase2.y"
                              { (yyval.node) = createNode("LessThan"); addChild((yyval.node), (yyvsp[-2].node)); addChild((yyval.node), (yyvsp[0].node)); }
-#line 1777 "phase2.tab.c"
+#line 1776 "phase2.tab.c"
     break;
 
   case 43:
-#line 245 "phase2.y"
+#line 244 "phase2.y"
                              { (yyval.node) = createNode("GreaterThan"); addChild((yyval.node), (yyvsp[-2].node)); addChild((yyval.node), (yyvsp[0].node)); }
-#line 1783 "phase2.tab.c"
+#line 1782 "phase2.tab.c"
     break;
 
   case 44:
-#line 246 "phase2.y"
+#line 245 "phase2.y"
                              { (yyval.node) = createNode("LessThanOrEqual"); addChild((yyval.node), (yyvsp[-2].node)); addChild((yyval.node), (yyvsp[0].node)); }
-#line 1789 "phase2.tab.c"
+#line 1788 "phase2.tab.c"
     break;
 
   case 45:
-#line 247 "phase2.y"
+#line 246 "phase2.y"
                              { (yyval.node) = createNode("GreaterThanOrEqual"); addChild((yyval.node), (yyvsp[-2].node)); addChild((yyval.node), (yyvsp[0].node)); }
-#line 1795 "phase2.tab.c"
+#line 1794 "phase2.tab.c"
     break;
 
   case 46:
-#line 251 "phase2.y"
+#line 250 "phase2.y"
        { (yyval.node) = createNode("Identifier"); addChild((yyval.node), createNode((yyvsp[0].str))); }
-#line 1801 "phase2.tab.c"
+#line 1800 "phase2.tab.c"
     break;
 
   case 47:
-#line 252 "phase2.y"
+#line 251 "phase2.y"
         { (yyval.node) = createNode("Number"); addChild((yyval.node), createNode((yyvsp[0].str))); }
-#line 1807 "phase2.tab.c"
+#line 1806 "phase2.tab.c"
     break;
 
   case 48:
-#line 253 "phase2.y"
+#line 252 "phase2.y"
                              { (yyval.node) = (yyvsp[-1].node); }
-#line 1813 "phase2.tab.c"
+#line 1812 "phase2.tab.c"
     break;
 
   case 49:
-#line 255 "phase2.y"
+#line 254 "phase2.y"
     {
         (yyval.node) = createNode("FunctionCall");
         addChild((yyval.node), createNode((yyvsp[-2].str)));
         addChild((yyval.node), createNode("EmptyArgumentList"));
     }
-#line 1823 "phase2.tab.c"
+#line 1822 "phase2.tab.c"
     break;
 
   case 50:
-#line 261 "phase2.y"
+#line 260 "phase2.y"
     {
         (yyval.node) = createNode("FunctionCall");
         addChild((yyval.node), createNode((yyvsp[-3].str)));
         addChild((yyval.node), (yyvsp[-1].node));
     }
-#line 1833 "phase2.tab.c"
+#line 1832 "phase2.tab.c"
     break;
 
   case 51:
-#line 269 "phase2.y"
+#line 268 "phase2.y"
                { (yyval.node) = createNode("ArgumentList"); addChild((yyval.node), (yyvsp[0].node)); }
-#line 1839 "phase2.tab.c"
+#line 1838 "phase2.tab.c"
     break;
 
   case 52:
-#line 270 "phase2.y"
+#line 269 "phase2.y"
                                      { (yyval.node) = (yyvsp[-2].node); addChild((yyval.node), (yyvsp[0].node)); }
-#line 1845 "phase2.tab.c"
+#line 1844 "phase2.tab.c"
     break;
 
 
-#line 1849 "phase2.tab.c"
+#line 1848 "phase2.tab.c"
 
       default: break;
     }
@@ -2077,16 +2076,24 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 273 "phase2.y"
+#line 272 "phase2.y"
 
 void yyerror(ASTNode **root, const char *s) {
-    fprintf(stderr, "Parser error: %s at line %d\n", s, yylineno);
+    FILE *errFile = fopen("syntax_errors.txt", "a");
+    if (errFile) {
+        fprintf(errFile, "Syntax error: %s at line %d\n", s, yylineno);
+        fclose(errFile);
+    }
 }
+
 FILE *resultFile;
 
 int main(int argc, char *argv[]) {
     ASTNode *root = NULL;
 
+
+FILE *errFile = fopen("syntax_errors.txt", "w");
+if (errFile) fclose(errFile);
     if (argc > 1) {
         yyin = fopen(argv[1], "r");
         if (!yyin) {

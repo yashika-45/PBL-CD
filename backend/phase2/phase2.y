@@ -67,10 +67,9 @@ declaration:
     }
 |   type_specifier ID ASSIGN expression SEMICOLON
     {
-        $$ = createNode("VariableDeclarationWithInit");
-        addChild($$, $1);
-        addChild($$, createNode($2));
-        addChild($$, $4);
+        $$ = createNode("Assignment");
+         addChild($$, createNode($2));  // 'a'
+         addChild($$, $4);
     }
 |   error SEMICOLON
     {
@@ -272,13 +271,21 @@ expression_list:
 
 %%
 void yyerror(ASTNode **root, const char *s) {
-    fprintf(stderr, "Parser error: %s at line %d\n", s, yylineno);
+    FILE *errFile = fopen("syntax_errors.txt", "a");
+    if (errFile) {
+        fprintf(errFile, "Syntax error: %s at line %d\n", s, yylineno);
+        fclose(errFile);
+    }
 }
+
 FILE *resultFile;
 
 int main(int argc, char *argv[]) {
     ASTNode *root = NULL;
 
+
+FILE *errFile = fopen("syntax_errors.txt", "w");
+if (errFile) fclose(errFile);
     if (argc > 1) {
         yyin = fopen(argv[1], "r");
         if (!yyin) {
